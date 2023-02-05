@@ -1,0 +1,36 @@
+.nav-data ul li{
+    list-style: none;
+    border: 1px solid gray;
+    margin: 0.6rem auto;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+}
+
+.nav-data ul li a{
+    text-decoration: none;
+    color: #351818;
+    font-weight: 700;
+}
+
+.nav-data ul li:hover{
+    background-color: #206330;
+    cursor: pointer;
+}
+
+.nav-data ul li a:hover{
+    color: #fdee17;
+}
+
+.nav-data{
+    margin-top: 5rem;
+}
+
+.nav-data ul{
+    display: flex;
+}
+
+@media only screen and (max-width: 800px){
+    .nav-data{
+        display:none;
+    }
+}

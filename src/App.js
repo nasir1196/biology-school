@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import React, { Suspense } from 'react';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Shared/Navbar/Navbar';
+import Footer from './components/Shared/Footer/Footer';
+import Home from './components/Home/Home';
+import NavItem from './components/Shared/NavItem/NavItem';
 
-function App() {
+
+function App ()
+{
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback="loading">
+      <BrowserRouter>
+        <Navbar />
+        <div className="mt-5">
+          <NavItem />
+        </div>
+
+        <div className='page-height'>
+          <Routes>
+            <Route exact path="/" element={ <Home /> } />
+          </Routes>
+        </div>
+        <Footer />
+      </BrowserRouter>
+    </Suspense>
   );
 }
 
