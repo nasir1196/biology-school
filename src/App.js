@@ -17,12 +17,12 @@ function App ()
   return (
     <Suspense fallback="loading">
       <BrowserRouter>
-        <Navbar />
-        {/* <div className="mt-5">
-          <NavItem />
-        </div> */}
+        <div style={ { marginBottom: "6rem" } }>
+          <Navbar />
+        </div>
 
-        <div className='page-height'>
+
+        <div style={ { height: "100vh" } }>
           <Routes>
             <Route exact path="/" element={ <Home /> } />
             <Route exact path="courses" element={ <Course /> } />
