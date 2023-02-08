@@ -1,14 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import i18next from 'i18next';
+import i18next, { changeLanguage } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () =>
 {
 
+    const { t } = useTranslation();
     const handleChange = ( e ) =>
     {
         i18next.changeLanguage( e.target.value );
+    };
+
+    const handleSearch = ( e ) =>
+    {
+        e.preventDefault();
+
+        console.log( e.target.value );
     };
     return (
         <>
@@ -21,37 +30,35 @@ const Navbar = () =>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                                <Link className="nav-link " to="/courses">{ t( "courses" ) }</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/link">Link</Link>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <Link className="nav-link dropdown-toggle cat" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Categories
-                                </Link>
-                                <ul className="dropdown-menu categories">
-                                    <li><Link className="dropdown-item" to="/action">Action</Link></li>
-                                    <li><Link className="dropdown-item" to="/other">Another action</Link></li>
-                                    <li><hr className="dropdown-divider" /></li>
-                                    <li><Link className="dropdown-item" to="/some">Something else here</Link></li>
-                                </ul>
+                                <Link className="nav-link " to="/programsCategory">{ t( "programsCategory" ) }</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/disable" className="nav-link disabled">Disabled</Link>
+                                <Link className="nav-link " to="/readingMaterials">{ t( "readingMaterials" ) }</Link>
                             </li>
+                            <li className="nav-item" style={ { marginRight: '4rem' } } >
+                                <input type="search" className="nav-link " style={ { width: "130%", borderRadius: "1rem", border: "2px solid green", outline: "none" } } name="search" id="search" placeholder={ t( "search" ) } onChange={ ( e ) => handleSearch( e ) } />
+                            </li>
+
+                            <li className="nav-item">
+                                <Link className="nav-link " to="/biologyOlympiad">{ t( 'olympiad1' ) }</Link>
+                            </li>
+
                         </ul>
-                        <form className="d-flex" role="search">
+                        <form className="d-flex">
 
                             <div>
-                                <select onChange={ ( e ) => handleChange( e ) }>
-                                    <option >Select Language</option>
+                                <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" onChange={ ( e ) => handleChange( e ) }>
                                     <option value={ "en" }>English</option>
                                     <option value={ "bn" }>বাংলা</option>
                                 </select>
                             </div>
 
-                            <button className="btn m-2 btn-outline-danger" type="button">Long in</button>
+                            <div>
+                                <button className="btn m-1 btn-outline-danger" type="button">{ t( "sign" ) }</button>
+                            </div>
                         </form>
 
                     </div>

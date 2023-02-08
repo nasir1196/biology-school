@@ -1,11 +1,16 @@
 .banner-screen{
+    display: flex;
+    align-items: center;
     height: 70vh;
-    background-image: url("../../../source/bg/fly.png");
+}
+.banner-bg{
+    height: 100vh;
+    background-image: url("https://source.unsplash.com/random/900×700/?biology");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
+    color:#fcfcfc;
+
 }
 
 .banner-auth li {
@@ -20,3 +25,4 @@
 text-decoration: none;
 color: #0a1e29;
 }
+

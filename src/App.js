@@ -15,9 +15,9 @@ function App ()
     <Suspense fallback="loading">
       <BrowserRouter>
         <Navbar />
-        <div className="mt-5">
+        {/* <div className="mt-5">
           <NavItem />
-        </div>
+        </div> */}
 
         <div className='page-height'>
           <Routes>
