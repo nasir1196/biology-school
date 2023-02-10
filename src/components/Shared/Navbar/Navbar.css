@@ -1,11 +1,160 @@
-.brand-logo{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.brand-logo {
     font-family: fantasy;
+    text-decoration: none;
+    color: #333;
+    font-weight: bolder;
+    font-size: 1.5rem;
 }
 
-.categories:hover{
+header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #ffffff;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    padding: 0px 7px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    z-index: 1000;
+}
+
+.input-select-button{
+    padding: 10px;
+    display: flex;
+}
+
+
+.navigation ul{
+    list-style: none;
+}
+
+.navigation ul li{
+    position: relative;
+    float: left;
+}
+.language, .navigation ul li a{
+    font-size: 1rem;
+    padding: 20px;
+    color: #333;
     display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
 }
 
-.cat:hover{
-display: block;
+
+
+.language{
+    margin-top : 10px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.navigation ul li a:hover{
+    background: #333;
+    color: #ffffff;
+    border-radius: 2rem;
+}
+
+.navigation ul li ul{
+    position: absolute;
+    left: 0;
+    width: 600px;
+    background: #fff;
+
+    display: none;
+}
+
+.navigation ul li ul li{
+    width: 100%;
+    border-top:1px solid rgba(0,0,0,.1)
+}
+
+.navigation ul li ul li ul{
+    left: 168px;
+    top: 0;
+}
+
+.item-flex{
+    display: flex;
+}
+
+
+.navigation ul li:focus-within > ul, .navigation ul li:hover > ul{
+    display: initial;
+}
+
+
+
+#menu-bar{
+    display: none;
+}
+
+header label{
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+@media(max-width:1150px){
+    header{
+        padding: 20px;
+    }
+
+    header label{
+        display: initial;
+    }
+
+    .navigation{
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: #fff;
+        border-top: 1px solid rgba(0,0,0,.1);
+        display: none;
+    }
+
+    .navigation ul li{
+        width: 100%;
+    }
+
+    .navigation ul li li{
+        margin-top:5rem
+    }
+
+    .item-flex{
+        display: initial;
+    }
+
+    .navigation ul li ul{
+        position: relative;
+        width: 100%;
+    }
+
+    .navigation ul li ul li{
+        background: #eee;
+    }
+
+    .navigation ul li ul li ul{
+        width: 100%;
+        left: 0;
+    }
+
+    #menu-bar:checked ~ .navigation{
+        display: initial;
+    }
+}
+
+@media(max-width:1229px){
+    header{
+        font-size: 0.6rem;
+    }
 }
