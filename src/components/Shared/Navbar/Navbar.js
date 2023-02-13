@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 import i18next, { changeLanguage } from 'i18next';
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 
 const Navbar = () =>
 {
@@ -19,16 +20,31 @@ const Navbar = () =>
 
         console.log( e.target.value );
     };
+
+
+    const [ navbar, setNavbar ] = useState( false );
+    const changeBackground = () =>
+    {
+        if ( window.scrollY > 20 )
+        {
+            setNavbar( true );
+        } else
+        {
+            setNavbar( false );
+        }
+    };
+
+    window.addEventListener( "scroll", changeBackground );
     return (
         <>
-            <header>
-                <Link className='brand-logo' to="/">Biology-School</Link>
+            <header style={ navbar ? { background: "#090418", color: "#ffffff" } : { background: "#ffffff" } }>
+                <Link style={ navbar ? { color: "#ffffff" } : { color: "black" } } className='brand-logo' to="/">Biology-School</Link>
 
                 <input type="checkbox" name="" id="menu-bar" />
                 <label htmlFor="menu-bar">Menu</label>
                 <nav className='navigation'>
                     <ul>
-                        <li><Link to="/course">{ t( 'courses' ) } </Link>
+                        <li><Link style={ navbar ? { color: "#ffffff" } : { color: "black" } } to="/course">{ t( 'courses' ) } </Link>
                             <ul>
                                 <div className='item-flex'>
                                     <div>
@@ -99,7 +115,7 @@ const Navbar = () =>
                                 </div>
                             </ul>
                         </li>
-                        <li><Link to="/">{ t( 'programsCategory' ) }</Link>
+                        <li><Link style={ navbar ? { color: "#ffffff" } : { color: "black" } } to="/">{ t( 'programsCategory' ) }</Link>
                             <ul>
                                 <div className='item-flex'>
                                     <div>
@@ -171,7 +187,7 @@ const Navbar = () =>
                             </ul>
                         </li>
 
-                        <li><Link to="/">{ t( 'readingMaterials' ) }</Link>
+                        <li><Link style={ navbar ? { color: "#ffffff" } : { color: "black" } } to="/">{ t( 'readingMaterials' ) }</Link>
                             <ul>
                                 <div className='item-flex'>
                                     <div>
@@ -242,7 +258,7 @@ const Navbar = () =>
                                 </div>
                             </ul>
                         </li>
-                        <li><Link to="/">{ t( 'olympiad1' ) }</Link>
+                        <li><Link style={ navbar ? { color: "#ffffff" } : { color: "black" } } to="/">{ t( 'olympiad1' ) }</Link>
                             <ul>
                                 <div className='item-flex'>
                                     <div>

@@ -1,0 +1,16 @@
+.display-footer li{
+list-style: none;
+}
+
+.display-footer li a{
+text-decoration: none;
+color: #090418;
+}
+
+.display-footer li a:hover{
+text-decoration: underline;
+color: #680935;
+padding: 8px;
+font-weight: 700;
+}
+
