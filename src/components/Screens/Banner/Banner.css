@@ -3,23 +3,12 @@
     align-items: center;
     height: 70vh;
 }
-.banner-bg-side{
-    height: 80vh;
-    background-image: url('../../../source/img/bg/bg.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 
-}
 .banner-bg{
 height: 80vh;
 background: #afaea3;
 }
-.left-side-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .banner-auth li {
     list-style: none;

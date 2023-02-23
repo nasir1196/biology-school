@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaTwitter, FaLinkedin, FaReddit, FaAppStoreIos, FaPlayCircle } from "react-icons/fa";
 import './Footer.css';
@@ -10,16 +10,16 @@ const Footer = () =>
     return (
         <div style={ { borderTop: "1px dotted gray" } }>
             <div className='container mt-5'>
-                <div className='d-flex justify-content-between m-4 py-3'>
+                <div className='grid grid-cols-2 '>
                     <div style={ { fontSize: "3rem", fontWeight: "bolder" } }>Biology-School</div>
-                    <div>
+                    <div className='flex justify-center'>
                         <Link style={ { fontSize: "3rem", margin: "0.4rem" } } to="/">{ <FaFacebook /> }</Link>
                         <Link style={ { fontSize: "3rem", margin: "0.4rem" } } to="/">{ <FaTwitter /> }</Link>
                         <Link style={ { fontSize: "3rem", margin: "0.4rem" } } to="/">{ <FaLinkedin /> }</Link>
                         <Link style={ { fontSize: "3rem", margin: "0.4rem" } } to="/">{ <FaReddit /> }</Link>
                     </div>
                 </div>
-                <div className="row display-footer">
+                <div className="grid grid-cols-4 mt-10 display-footer">
                     <div className="col-md-3">
                         <li><Link to="/">About</Link></li>
                         <li><Link to="/">Biology for business</Link></li>
@@ -55,14 +55,13 @@ const Footer = () =>
                         <li><Link to="/">Criteria Zone</Link></li>
                     </div>
                 </div>
-                <div className='d-flex justify-content-between m-5'>
-                    <div>
-                        <p className='text-center'>Copyright&copy; All Right Reserved - { year }</p>
+                <div className='grid grid-cols-2 m-10'>
+                    <div className='flex justify-center items-center'>
+                        <p>Copyright&copy; All Right Reserved - { year }</p>
                     </div>
-                    <div className='d-flex justify-content-between'>
-                        <div className='m-3'><Link style={ { fontSize: "3rem", margin: "0.4rem" } } to="/">{ <FaPlayCircle /> }</Link></div>
-
-                        <div className='m-3'><Link style={ { fontSize: "3rem", margin: "0.4rem", color: "#black" } } to="/">{ <FaAppStoreIos /> }</Link></div>
+                    <div className='flex justify-center'>
+                        <div><Link style={ { fontSize: "3rem", color: "#0fa4d1" } } to="/">{ <FaPlayCircle /> }</Link></div>
+                        <div ><Link style={ { fontSize: "3rem", color: "#d90b0b" } } to="/">{ <FaAppStoreIos /> }</Link></div>
                     </div>
                 </div>
             </div>

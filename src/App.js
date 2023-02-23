@@ -16,19 +16,16 @@ function App ()
   return (
     <Suspense fallback="loading">
       <BrowserRouter>
-        <div style={ { marginBottom: "4.9rem" } }>
+        <div style={ { marginBottom: "4.2rem" } }>
           <Navbar />
         </div>
+        <Routes>
+          <Route exact path="/" element={ <Home /> } />
+          <Route exact path="/course" element={ <Course /> } />
+          <Route exact path="/some" element={ <Some /> } />
 
+        </Routes>
 
-        <div style={ { height: "100vh" } }>
-          <Routes>
-            <Route exact path="/" element={ <Home /> } />
-            <Route exact path="/course" element={ <Course /> } />
-            <Route exact path="/some" element={ <Some /> } />
-
-          </Routes>
-        </div>
         <Footer />
       </BrowserRouter>
     </Suspense>

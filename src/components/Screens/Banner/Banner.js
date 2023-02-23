@@ -7,34 +7,31 @@ const Banner = () =>
 {
     const { t } = useTranslation();
     return (
-        <>
-            <div className='banner-bg'>
-
-                <div className="row">
-                    <div className="col-md-8 ">
-                        <div className="left-side-container">
-                            <div>
-
-                                <h1 >Learning is what you</h1>
-                                <h1>make of it. Make it</h1>
-                                <h1>yours at Biology-School.</h1>
-                                <input type="search" name="search" id="search" />
-                                <button type="submit">Search</button>
-                                <h3><Link to="/full-course">Explore all courses</Link></h3>
-                            </div>
+        <div style={ { background: "#E1DDDB" } } className="py-10">
+            <div className="container grid grid-cols-2">
+                <div className='flex justify-center'>
+                    <div className='mt-10'>
+                        <div className='text-4xl font-extrabold'>
+                            <h1>{ t( "bannerTitle" ) }</h1>
+                            <h1>make of it. Make it</h1>
+                            <h1>yours at Biology-School.</h1>
                         </div>
-                    </div>
-                    <div className="col-md-4">
-                        <div className="banner-bg-side">
-
+                        <div className='m-5'>
+                            <form>
+                                <div className="flex">
+                                    <input type="search" id="default-search" class="block w-full px-5 py-2.5 mr-2 mb-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search our 3000+ courses" required />
+                                    <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Search</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div>
+                            <Link to="/">Explore all courses</Link>
                         </div>
                     </div>
                 </div>
-
-
+                <div className='flex justify-center'>hi</div>
             </div>
-
-        </>
+        </div>
     );
 };
 

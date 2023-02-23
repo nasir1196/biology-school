@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import i18next, { changeLanguage } from 'i18next';
+import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 
@@ -36,7 +36,7 @@ const Navbar = () =>
 
     window.addEventListener( "scroll", changeBackground );
     return (
-        <>
+        <div className='mb-3'>
             <header style={ navbar ? { background: "#090418", color: "#ffffff" } : { background: "#ffffff" } }>
                 <Link style={ navbar ? { color: "#ffffff" } : { color: "black" } } className='brand-logo' to="/">Biology-School</Link>
 
@@ -44,79 +44,41 @@ const Navbar = () =>
                 <label htmlFor="menu-bar">Menu</label>
                 <nav className='navigation'>
                     <ul>
-                        <li><Link style={ navbar ? { color: "#ffffff" } : { color: "black" } } to="/course">{ t( 'courses' ) } </Link>
-                            <ul>
-                                <div className='item-flex'>
+                        <li className='first-list'><Link style={ navbar ? { color: "#ffffff" } : { color: "black" } } to="/course">{ t( 'courses' ) } </Link>
+                            <ul className='inner-ul'>
+                                <div style={ { border: "1px solid gray", padding: "2px", boxShadow: "5px 5px 10px 5px gray", borderRadius: "7px" } }>
                                     <div>
-                                        <li>
-                                            <Link to="/botany">a. Botany</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/zoology">b. Zoology</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/microbiology">c. Microbiology</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/biotechnology">d. Biotechnology</Link>
-                                        </li>
-
-                                        <li>
-                                            <Link to="/parasitology">e. Parasitology</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/genetics">f. Genetics </Link>
-                                        </li>
+                                        <h1 style={ { margin: "10px", padding: "10px", fontWeight: "bold", fontSize: "2rem" } }>Courses By Subject</h1>
                                     </div>
+                                    <hr />
+                                    <div className='item-flex'>
+                                        <div>
+                                            <li>
+                                                <Link to="/botany">a. Botany</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/zoology">b. Zoology</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/microbiology">c. Microbiology</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/biotechnology">d. Biotechnology</Link>
+                                            </li>
 
-                                    <div>
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-                                    </div>
-
-                                    <div>
-
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
+                                            <li>
+                                                <Link to="/parasitology">e. Parasitology</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/genetics">f. Genetics </Link>
+                                            </li>
+                                        </div>
                                     </div>
                                 </div>
                             </ul>
                         </li>
-                        <li><Link style={ navbar ? { color: "#ffffff" } : { color: "black" } } to="/">{ t( 'programsCategory' ) }</Link>
-                            <ul>
+                        <li className='first-list'><Link style={ navbar ? { color: "#ffffff" } : { color: "black" } } to="/">{ t( 'programsCategory' ) }</Link>
+                            <ul className='inner-ul'>
                                 <div className='item-flex'>
                                     <div>
                                         <li>
@@ -137,197 +99,17 @@ const Navbar = () =>
                                         </li>
                                         <li>
                                             <Link to="/genetics">f. Genetics </Link>
-                                        </li>
-                                    </div>
-
-                                    <div>
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-                                    </div>
-
-                                    <div>
-
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
                                         </li>
                                     </div>
                                 </div>
                             </ul>
                         </li>
 
-                        <li><Link style={ navbar ? { color: "#ffffff" } : { color: "black" } } to="/">{ t( 'readingMaterials' ) }</Link>
-                            <ul>
-                                <div className='item-flex'>
-                                    <div>
-                                        <li>
-                                            <Link to="/botany">a. Botany</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/zoology">b. Zoology</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/microbiology">c. Microbiology</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/biotechnology">d. Biotechnology</Link>
-                                        </li>
-
-                                        <li>
-                                            <Link to="/parasitology">e. Parasitology</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/genetics">f. Genetics </Link>
-                                        </li>
-                                    </div>
-
-                                    <div>
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-                                    </div>
-
-                                    <div>
-
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-                                    </div>
-                                </div>
-                            </ul>
+                        <li className='first-list'>
+                            <Link style={ navbar ? { color: "#ffffff" } : { color: "black" } } to="/">{ t( 'readingMaterials' ) }</Link>
                         </li>
-                        <li><Link style={ navbar ? { color: "#ffffff" } : { color: "black" } } to="/">{ t( 'olympiad1' ) }</Link>
-                            <ul>
-                                <div className='item-flex'>
-                                    <div>
-                                        <li>
-                                            <Link to="/botany">a. Botany</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/zoology">b. Zoology</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/microbiology">c. Microbiology</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/biotechnology">d. Biotechnology</Link>
-                                        </li>
-
-                                        <li>
-                                            <Link to="/parasitology">e. Parasitology</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/genetics">f. Genetics </Link>
-                                        </li>
-                                    </div>
-
-                                    <div>
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-                                    </div>
-
-                                    <div>
-
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/biochemistry">g. Biochemistry </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/cell-biology">h. Cell Biology </Link>
-                                        </li>
-                                    </div>
-                                </div>
-                            </ul>
+                        <li className='first-list'>
+                            <Link style={ navbar ? { color: "#ffffff" } : { color: "black" } } to="/">{ t( 'olympiad1' ) }</Link>
                         </li>
 
 
@@ -351,7 +133,7 @@ const Navbar = () =>
 
                 </nav>
             </header>
-        </>
+        </div>
     );
 };
 
