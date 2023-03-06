@@ -124,7 +124,9 @@ const Navbar = () =>
                                     <option value={ "bn" }>বাং</option>
                                 </select>
 
-                                <button style={ { margin: "2px", } } className="btn btn-outline-danger" type="button">{ t( "sign" ) }</button>
+                                <Link to="/signup">
+                                    <button style={ { margin: "2px", } } className="btn btn-outline-danger" type="button">{ t( "sign" ) }</button>
+                                </Link>
                             </div>
 
                         </li>

@@ -1,14 +1,14 @@
 import React from 'react';
 import './Home.css';
 import Banner from '../Screens/Banner/Banner';
-import Slider from '../Screens/Slider/Slider';
+import SliderBox from '../Screens/SliderBox/SliderBox';
 
 const Home = () =>
 {
     return (
         <div>
             <Banner />
-            <Slider />
+            <SliderBox />
         </div>
     );
 };
