@@ -18,7 +18,7 @@ function App ()
   return (
     <Suspense fallback="loading">
       <BrowserRouter>
-        <div style={ { marginBottom: "4.2rem" } }>
+        <div style={ { marginBottom: "1.2rem" } }>
           <Navbar />
         </div>
         <Routes>

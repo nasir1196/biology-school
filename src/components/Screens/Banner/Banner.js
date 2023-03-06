@@ -7,8 +7,8 @@ const Banner = () =>
 {
     const { t } = useTranslation();
     return (
-        <div style={ { background: "#E1DDDB" } } className="py-10">
-            <div className="container grid grid-cols-2">
+        <div style={ { background: "#E1DDDB" } } className="py-10 banner-screen">
+            <div className="container grid grid-cols-3">
                 <div className='flex justify-center'>
                     <div className='mt-10'>
                         <div className='text-4xl font-extrabold'>
@@ -29,7 +29,10 @@ const Banner = () =>
                         </div>
                     </div>
                 </div>
-                <div className='flex justify-center'>hi</div>
+                <div></div>
+                <div className='flex justify-center' style={ { backgroundImage: `url( 'https://source.unsplash.com/oWTW-jNGl9I/600x800' )`, height: "70vh" } }>
+
+                </div>
             </div>
         </div>
     );

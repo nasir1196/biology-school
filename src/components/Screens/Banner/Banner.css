@@ -1,25 +1,7 @@
 .banner-screen{
-    display: flex;
-    align-items: center;
-    height: 70vh;
+    height: 80vh;
 }
 
-.banner-bg{
-height: 80vh;
-background: #afaea3;
+.bg-hight{
+    height: 75vh;
 }
-
-
-.banner-auth li {
-    list-style: none;
-    border: 1px solid gray;
-    margin: 0.6rem auto;
-    padding: 0.5rem;
-    border-radius: 0.3rem;
-}
-
-.banner-auth li a{
-text-decoration: none;
-color: #0a1e29;
-}
-
